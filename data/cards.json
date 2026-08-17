@@ -1,0 +1,94 @@
+{
+  "cards": [
+    {
+      "id": "hbl_visa_platinum",
+      "bank": "HBL",
+      "name": "HBL Visa Platinum",
+      "type": "Visa",
+      "annualFee": 15000,
+      "features": ["Cashback on dining", "Airport lounge access", "Travel insurance"],
+      "category": "Premium"
+    },
+    {
+      "id": "hbl_mc_gold",
+      "bank": "HBL",
+      "name": "HBL Mastercard Gold",
+      "type": "Mastercard",
+      "annualFee": 6000,
+      "features": ["Cashback on shopping", "Fuel surcharge waiver"],
+      "category": "Standard"
+    },
+    {
+      "id": "ubl_visa_platinum",
+      "bank": "UBL",
+      "name": "UBL Visa Platinum",
+      "type": "Visa",
+      "annualFee": 12000,
+      "features": ["Dining discounts", "Travel benefits", "Cashback"],
+      "category": "Premium"
+    },
+    {
+      "id": "ubl_mc_gold",
+      "bank": "UBL",
+      "name": "UBL Mastercard Gold",
+      "type": "Mastercard",
+      "annualFee": 5000,
+      "features": ["Shopping discounts", "Fuel benefits"],
+      "category": "Standard"
+    },
+    {
+      "id": "meezan_visa_1",
+      "bank": "Meezan Bank",
+      "name": "Meezan Visa Card",
+      "type": "Visa",
+      "annualFee": 3000,
+      "features": ["Islamic banking", "Online shopping cashback"],
+      "category": "Standard"
+    },
+    {
+      "id": "alfalah_visa_platinum",
+      "bank": "Bank Alfalah",
+      "name": "Alfalah Visa Platinum",
+      "type": "Visa",
+      "annualFee": 12000,
+      "features": ["Dining discounts", "Travel insurance", "Lounge access"],
+      "category": "Premium"
+    },
+    {
+      "id": "alfalah_mc_gold",
+      "bank": "Bank Alfalah",
+      "name": "Alfalah Mastercard Gold",
+      "type": "Mastercard",
+      "annualFee": 4500,
+      "features": ["Shopping cashback", "Grocery discounts"],
+      "category": "Standard"
+    },
+    {
+      "id": "mcb_visa_platinum",
+      "bank": "MCB Bank",
+      "name": "MCB Visa Platinum",
+      "type": "Visa",
+      "annualFee": 10000,
+      "features": ["Dining cashback", "Travel benefits"],
+      "category": "Premium"
+    },
+    {
+      "id": "faysal_visa_1",
+      "bank": "Faysal Bank",
+      "name": "Faysal Visa Card",
+      "type": "Visa",
+      "annualFee": 3500,
+      "features": ["Shopping discounts", "Online cashback"],
+      "category": "Standard"
+    },
+    {
+      "id": "habib_mc_gold",
+      "bank": "Bank Al Habib",
+      "name": "Bank Al Habib Mastercard Gold",
+      "type": "Mastercard",
+      "annualFee": 5000,
+      "features": ["Dining benefits", "Shopping cashback"],
+      "category": "Standard"
+    }
+  ]
+}

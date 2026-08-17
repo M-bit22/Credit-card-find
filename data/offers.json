@@ -1,0 +1,204 @@
+{
+  "offers": [
+    {
+      "offerId": "offer_1",
+      "cardId": "hbl_visa_platinum",
+      "bank": "HBL",
+      "cardName": "HBL Visa Platinum",
+      "outlet": "McDonald's",
+      "discount": 20,
+      "category": "Food & Dining",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_2",
+      "cardId": "hbl_visa_platinum",
+      "bank": "HBL",
+      "cardName": "HBL Visa Platinum",
+      "outlet": "KFC",
+      "discount": 20,
+      "category": "Food & Dining",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_3",
+      "cardId": "hbl_visa_platinum",
+      "bank": "HBL",
+      "cardName": "HBL Visa Platinum",
+      "outlet": "Hardees",
+      "discount": 15,
+      "category": "Food & Dining",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_4",
+      "cardId": "hbl_mc_gold",
+      "bank": "HBL",
+      "cardName": "HBL Mastercard Gold",
+      "outlet": "Carrefour",
+      "discount": 10,
+      "category": "Grocery",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_5",
+      "cardId": "hbl_mc_gold",
+      "bank": "HBL",
+      "cardName": "HBL Mastercard Gold",
+      "outlet": "Imtiaz Superstore",
+      "discount": 10,
+      "category": "Grocery",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_6",
+      "cardId": "ubl_visa_platinum",
+      "bank": "UBL",
+      "cardName": "UBL Visa Platinum",
+      "outlet": "Pizza Hut",
+      "discount": 25,
+      "category": "Food & Dining",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_7",
+      "cardId": "ubl_visa_platinum",
+      "bank": "UBL",
+      "cardName": "UBL Visa Platinum",
+      "outlet": "Domino's",
+      "discount": 20,
+      "category": "Food & Dining",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_8",
+      "cardId": "ubl_mc_gold",
+      "bank": "UBL",
+      "cardName": "UBL Mastercard Gold",
+      "outlet": "Daraz",
+      "discount": 15,
+      "category": "E-Commerce",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_9",
+      "cardId": "ubl_mc_gold",
+      "bank": "UBL",
+      "cardName": "UBL Mastercard Gold",
+      "outlet": "Gulshan Deals",
+      "discount": 10,
+      "category": "E-Commerce",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_10",
+      "cardId": "meezan_visa_1",
+      "bank": "Meezan Bank",
+      "cardName": "Meezan Visa Card",
+      "outlet": "Daraz",
+      "discount": 10,
+      "category": "E-Commerce",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_11",
+      "cardId": "meezan_visa_1",
+      "bank": "Meezan Bank",
+      "cardName": "Meezan Visa Card",
+      "outlet": "Naheed Supermarket",
+      "discount": 10,
+      "category": "Grocery",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_12",
+      "cardId": "alfalah_visa_platinum",
+      "bank": "Bank Alfalah",
+      "cardName": "Alfalah Visa Platinum",
+      "outlet": "Cinepax",
+      "discount": 30,
+      "category": "Entertainment",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_13",
+      "cardId": "alfalah_visa_platinum",
+      "bank": "Bank Alfalah",
+      "cardName": "Alfalah Visa Platinum",
+      "outlet": "McDonald's",
+      "discount": 15,
+      "category": "Food & Dining",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_14",
+      "cardId": "alfalah_mc_gold",
+      "bank": "Bank Alfalah",
+      "cardName": "Alfalah Mastercard Gold",
+      "outlet": "Carrefour",
+      "discount": 12,
+      "category": "Grocery",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_15",
+      "cardId": "mcb_visa_platinum",
+      "bank": "MCB Bank",
+      "cardName": "MCB Visa Platinum",
+      "outlet": "Burger King",
+      "discount": 20,
+      "category": "Food & Dining",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_16",
+      "cardId": "mcb_visa_platinum",
+      "bank": "MCB Bank",
+      "cardName": "MCB Visa Platinum",
+      "outlet": "Cinepax",
+      "discount": 25,
+      "category": "Entertainment",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_17",
+      "cardId": "faysal_visa_1",
+      "bank": "Faysal Bank",
+      "cardName": "Faysal Visa Card",
+      "outlet": "Daraz",
+      "discount": 12,
+      "category": "E-Commerce",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_18",
+      "cardId": "faysal_visa_1",
+      "bank": "Faysal Bank",
+      "cardName": "Faysal Visa Card",
+      "outlet": "Foodpanda",
+      "discount": 15,
+      "category": "Food Delivery",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_19",
+      "cardId": "habib_mc_gold",
+      "bank": "Bank Al Habib",
+      "cardName": "Bank Al Habib Mastercard Gold",
+      "outlet": "KFC",
+      "discount": 15,
+      "category": "Food & Dining",
+      "validity": "2026-12-31"
+    },
+    {
+      "offerId": "offer_20",
+      "cardId": "habib_mc_gold",
+      "bank": "Bank Al Habib",
+      "cardName": "Bank Al Habib Mastercard Gold",
+      "outlet": "Imtiaz Superstore",
+      "discount": 10,
+      "category": "Grocery",
+      "validity": "2026-12-31"
+    }
+  ]
+}
