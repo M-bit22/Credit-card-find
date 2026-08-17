@@ -4,6 +4,7 @@ import os
 from dotenv import load_dotenv
 from routes.cards import cards_bp
 from routes.offers import offers_bp
+from routes.chatbot import chatbot_bp
 
 load_dotenv()
 
@@ -23,6 +24,7 @@ print(f"✓ Groq Key exists: {bool(GROQ_KEY)}")
 # Register Routes
 app.register_blueprint(cards_bp)
 app.register_blueprint(offers_bp)
+app.register_blueprint(chatbot_bp)
 
 # Home Route
 @app.route('/', methods=['GET'])
@@ -38,8 +40,9 @@ def home():
             "/api/offers": "Get all offers",
             "/api/offers/card/hbl_visa_platinum": "Get offers by card",
             "/api/offers/outlet/McDonalds": "Get offers by outlet",
-            "/api/offers/category/Food & Dining": "Get offers by category",
-            "/api/offers/bank/HBL": "Get offers by bank"
+            "/api/offers/category/Grocery": "Get offers by category",
+            "/api/offers/bank/HBL": "Get offers by bank",
+            "/api/chatbot/ask": "POST - Ask AI chatbot a question"
         }
     }), 200
 
