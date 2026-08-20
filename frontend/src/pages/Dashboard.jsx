@@ -1,46 +1,139 @@
+import { useEffect, useState } from 'react'
+import CardTile from '../components/cards/CardTile'
+import { getCards, getOffers } from '../services/api'
+import CardDetails from './CardDetails'
+
 function Dashboard() {
-  return (
-    <main className="min-h-screen bg-[#0B0E13] p-8">
+    const [cards, setCards] = useState([])
+    const [offers, setOffers] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState('')
+    const [selectedCard, setSelectedCard] = useState(null)
 
-      {/* Header */}
-      <div className="mb-8">
+    useEffect(() => {
+        async function loadData() {
+            try {
+                setLoading(true)
 
-        <h1 className="text-3xl font-semibold text-[#E6E8EB]">
-          Find your perfect card
-        </h1>
+                const [cardsData, offersData] = await Promise.all([
+                    getCards(),
+                    getOffers(),
+                ])
 
-        <p className="mt-2 text-[#9AA3AE]">
-          Discover the best credit card discounts and offers.
-        </p>
+                setCards(cardsData)
+                setOffers(offersData)
+            } catch (err) {
+                console.error(err)
+                setError('Unable to load card data.')
+            } finally {
+                setLoading(false)
+            }
+        }
 
-      </div>
+        loadData()
+    }, [])
 
-      {/* Search */}
-      <div className="mb-8">
+    function getMaxDiscount(cardId) {
+        const cardOffers = offers.filter(
+            (offer) => offer.cardId === cardId
+        )
 
-        <input
-          type="text"
-          placeholder="Search cards, banks or outlets..."
-          className="w-full rounded-xl border border-white/10 bg-[#11151C] px-5 py-4 text-[#E6E8EB] outline-none placeholder:text-[#9AA3AE] focus:border-[#6366F1]"
-        />
+        if (cardOffers.length === 0) {
+            return 0
+        }
 
-      </div>
+        return Math.max(
+            ...cardOffers.map((offer) => Number(offer.discount))
+        )
+    }
 
-      {/* Featured Offers */}
-      <div className="rounded-2xl border border-white/5 bg-[#11151C] p-8">
+    if (selectedCard) {
+        return (
+            <CardDetails
+                card={selectedCard}
+                onBack={() => setSelectedCard(null)}
+            />
+        )
+    }
 
-        <h2 className="text-xl font-semibold text-[#E6E8EB]">
-          Featured Offers
-        </h2>
+    return (
+        <main className="min-h-screen bg-[#0B0E13] p-8">
 
-        <p className="mt-2 text-[#9AA3AE]">
-          Your card offers will appear here.
-        </p>
+            {/* Header */}
+            <div className="mb-8">
+                <h1 className="text-3xl font-semibold text-[#E6E8EB]">
+                    Find your perfect card
+                </h1>
 
-      </div>
+                <p className="mt-2 text-[#9AA3AE]">
+                    Discover the best credit card discounts and offers.
+                </p>
+            </div>
 
-    </main>
-  )
+            {/* Search */}
+            <div className="mb-8">
+                <input
+                    type="text"
+                    placeholder="Search cards, banks or outlets..."
+                    className="w-full rounded-xl border border-white/10 bg-[#11151C] px-5 py-4 text-[#E6E8EB] outline-none placeholder:text-[#9AA3AE] focus:border-[#6366F1]"
+                />
+            </div>
+
+            {/* Error */}
+            {error && (
+                <div className="mb-6 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-400">
+                    {error}
+                </div>
+            )}
+
+            {/* Loading */}
+            {loading ? (
+                <div className="flex min-h-64 items-center justify-center">
+                    <p className="text-[#9AA3AE]">
+                        Loading cards...
+                    </p>
+                </div>
+            ) : (
+                <section>
+
+                    {/* Section heading */}
+                    <div className="mb-5 flex items-end justify-between">
+
+                        <div>
+                            <h2 className="text-xl font-semibold text-[#E6E8EB]">
+                                Popular Cards
+                            </h2>
+
+                            <p className="mt-1 text-sm text-[#9AA3AE]">
+                                Explore cards with the best available discounts.
+                            </p>
+                        </div>
+
+                        <span className="text-sm text-[#9AA3AE]">
+                            {cards.length} cards
+                        </span>
+
+                    </div>
+
+                    {/* Cards */}
+                    <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+
+                        {cards.map((card) => (
+                            <CardTile
+                                key={card.id}
+                                card={card}
+                                maxDiscount={getMaxDiscount(card.id)}
+                                onViewOffers={() => setSelectedCard(card)}
+                            />
+                        ))}
+
+                    </div>
+
+                </section>
+            )}
+
+        </main>
+    )
 }
 
 export default Dashboard
