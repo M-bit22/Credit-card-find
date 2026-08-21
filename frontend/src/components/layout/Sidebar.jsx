@@ -1,4 +1,4 @@
-function Sidebar() {
+function Sidebar({ activePage, setActivePage }) {
     return (
         <aside className="flex h-screen w-64 flex-col border-r border-white/5 bg-[#11151C]">
 
@@ -21,19 +21,41 @@ function Sidebar() {
             <nav className="flex-1 space-y-2 px-3 py-6">
 
                 {/* Dashboard */}
-                <button className="flex w-full items-center gap-3 rounded-lg bg-[#171C24] px-4 py-3 text-sm font-medium text-[#E6E8EB]">
+                <button
+                    onClick={() => setActivePage('dashboard')}
+                    className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium ${activePage === 'dashboard'
+                        ? 'bg-[#171C24] text-[#E6E8EB]'
+                        : 'text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]'
+                        }`}
+                >
                     <span>⌂</span>
                     Dashboard
                 </button>
 
                 {/* Cards */}
-                <button className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]">
+                <button
+                    onClick={() => setActivePage('cards')}
+                    className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm ${activePage === 'cards'
+                            ? 'bg-[#171C24] text-[#E6E8EB]'
+                            : 'text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]'
+                        }`}
+                >
                     <span>▣</span>
                     Cards
                 </button>
 
                 {/* Offers */}
-                <button className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]">
+                <button
+                    onClick={() => setActivePage('offers')}
+                    className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm ${activePage === 'offers'
+                        ? 'bg-[#171C24] text-[#E6E8EB]'
+                        : 'text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]'
+                        }`}
+                >
+
+
+
+
                     <span>％</span>
                     Offers
                 </button>

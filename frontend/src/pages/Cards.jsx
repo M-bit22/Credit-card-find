@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react'
-import CardTile from '../components/cards/CardTile'
 import { getCards, getOffers } from '../services/api'
+import CardTile from '../components/cards/CardTile'
 import CardDetails from './CardDetails'
-import OfferTile from '../components/offers/OfferTile'
 
-function Dashboard() {
+function Cards() {
     const [cards, setCards] = useState([])
     const [offers, setOffers] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState('')
-    const [selectedCard, setSelectedCard] = useState(null)
     const [searchTerm, setSearchTerm] = useState('')
+    const [selectedCard, setSelectedCard] = useState(null)
 
     useEffect(() => {
         async function loadData() {
@@ -26,7 +25,7 @@ function Dashboard() {
                 setOffers(offersData)
             } catch (err) {
                 console.error(err)
-                setError('Unable to load card data.')
+                setError('Unable to load cards.')
             } finally {
                 setLoading(false)
             }
@@ -48,12 +47,14 @@ function Dashboard() {
             ...cardOffers.map((offer) => Number(offer.discount))
         )
     }
+
     const filteredCards = cards.filter((card) => {
         const search = searchTerm.toLowerCase().trim()
 
         if (!search) {
             return true
         }
+
 
         return (
             card.name.toLowerCase().includes(search) ||
@@ -62,15 +63,14 @@ function Dashboard() {
             card.category.toLowerCase().includes(search)
         )
     })
-
     if (selectedCard) {
-        return (
-            <CardDetails
-                card={selectedCard}
-                onBack={() => setSelectedCard(null)}
-            />
-        )
-    }
+    return (
+        <CardDetails
+            card={selectedCard}
+            onBack={() => setSelectedCard(null)}
+        />
+    )
+}
 
     return (
         <main className="min-h-screen bg-[#0B0E13] p-8">
@@ -78,11 +78,11 @@ function Dashboard() {
             {/* Header */}
             <div className="mb-8">
                 <h1 className="text-3xl font-semibold text-[#E6E8EB]">
-                    Find your perfect card
+                    Credit Cards
                 </h1>
 
                 <p className="mt-2 text-[#9AA3AE]">
-                    Discover the best credit card discounts and offers.
+                    Browse all available credit cards and their benefits.
                 </p>
             </div>
 
@@ -92,7 +92,7 @@ function Dashboard() {
                     type="text"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Search cards, banks or card types..."
+                    placeholder="Search by card, bank, type or category..."
                     className="w-full rounded-xl border border-white/10 bg-[#11151C] px-5 py-4 text-[#E6E8EB] outline-none placeholder:text-[#9AA3AE] focus:border-[#6366F1]"
                 />
             </div>
@@ -112,18 +112,18 @@ function Dashboard() {
                     </p>
                 </div>
             ) : (
-                <section>
+                <>
 
                     {/* Section heading */}
                     <div className="mb-5 flex items-end justify-between">
 
                         <div>
                             <h2 className="text-xl font-semibold text-[#E6E8EB]">
-                                Popular Cards
+                                All Cards
                             </h2>
 
                             <p className="mt-1 text-sm text-[#9AA3AE]">
-                                Explore cards with the best available discounts.
+                                Compare cards from Pakistani banks.
                             </p>
                         </div>
 
@@ -147,45 +147,11 @@ function Dashboard() {
 
                     </div>
 
-                </section>
+                </>
             )}
-
-            {/* Featured Offers */}
-            <section className="mt-10">
-
-                <div className="mb-5">
-                    <h2 className="text-xl font-semibold text-[#E6E8EB]">
-                        Featured Offers
-                    </h2>
-
-                    <p className="mt-1 text-sm text-[#9AA3AE]">
-                        Explore the latest discounts available across popular outlets.
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-
-                    {offers.slice(0, 6).map((offer) => (
-                        <OfferTile
-                            key={offer.offerId}
-                            offer={offer}
-                        />
-                    ))}
-
-                </div>
-
-            </section>
-
-
-
-
-
-
-
-
 
         </main>
     )
 }
 
-export default Dashboard
+export default Cards
