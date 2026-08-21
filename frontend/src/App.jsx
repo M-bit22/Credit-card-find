@@ -4,6 +4,8 @@ import ChatWidget from './components/chatbot/ChatWidget'
 import Dashboard from './pages/Dashboard'
 import Cards from './pages/Cards'
 import Offers from './pages/Offers'
+import Banks from './pages/Banks'
+import Settings from './pages/Settings'
 
 function App() {
   const [activePage, setActivePage] = useState('dashboard')
@@ -23,6 +25,10 @@ function App() {
         {activePage === 'cards' && <Cards />}
 
         {activePage === 'offers' && <Offers />}
+
+        {activePage === 'banks' && <Banks />}
+
+        {activePage === 'settings' && <Settings />}
 
       </div>
 

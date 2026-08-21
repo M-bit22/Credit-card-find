@@ -36,8 +36,8 @@ function Sidebar({ activePage, setActivePage }) {
                 <button
                     onClick={() => setActivePage('cards')}
                     className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm ${activePage === 'cards'
-                            ? 'bg-[#171C24] text-[#E6E8EB]'
-                            : 'text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]'
+                        ? 'bg-[#171C24] text-[#E6E8EB]'
+                        : 'text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]'
                         }`}
                 >
                     <span>▣</span>
@@ -61,7 +61,13 @@ function Sidebar({ activePage, setActivePage }) {
                 </button>
 
                 {/* Banks */}
-                <button className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]">
+                <button
+                    onClick={() => setActivePage('banks')}
+                    className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm ${activePage === 'banks'
+                        ? 'bg-[#171C24] text-[#E6E8EB]'
+                        : 'text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]'
+                        }`}
+                >
                     <span>◉</span>
                     Banks
                 </button>
@@ -71,7 +77,14 @@ function Sidebar({ activePage, setActivePage }) {
             {/* Settings */}
             <div className="border-t border-white/5 p-3">
 
-                <button className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]">
+                <button
+                    onClick={() => setActivePage('settings')}
+                    className={`flex w-full items-center gap-3 rounded-lg px-4 py-3 text-sm ${activePage === 'settings'
+                        ? 'bg-[#171C24] text-[#E6E8EB]'
+                        : 'text-[#9AA3AE] hover:bg-[#171C24] hover:text-[#E6E8EB]'
+                        }`}
+
+                >
                     <span>⚙</span>
                     Settings
                 </button>
